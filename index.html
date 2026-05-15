@@ -90,6 +90,9 @@ h1{font-size:18px;font-weight:700;margin-bottom:4px}
             <div class="theme-btn" style="background:#5EAA57" data-color="#5EAA57" title="グリーン" onclick="selectTheme(this)"></div>
             <div class="theme-btn" style="background:#EF9484" data-color="#EF9484" title="ナチュラル" onclick="selectTheme(this)"></div>
             <div class="theme-btn" style="background:#F77E1E" data-color="#F77E1E" title="エネルギッシュ" onclick="selectTheme(this)"></div>
+            <div class="theme-btn" style="background:#3CBDDF" data-color="#3CBDDF" title="クール" onclick="selectTheme(this)"></div>
+            <div class="theme-btn" style="background:#BB0000" data-color="#BB0000" title="パッション" onclick="selectTheme(this)"></div>
+            <div class="theme-btn" style="background:#666666" data-color="#666666" title="モノクロ" onclick="selectTheme(this)"></div>
           </div>
         </div>
         <div class="field">
@@ -106,7 +109,7 @@ h1{font-size:18px;font-weight:700;margin-bottom:4px}
           <input type="text" id="name" placeholder="例：ホテル自慢のオムレツ" maxlength="13" oninput="updatePreview()">
         </div>
         <div class="field">
-          <label>英訳（半角38文字まで）</label>
+          <label>英訳（任意・半角38文字まで）</label>
           <div class="eng-row">
             <input type="text" id="engname" placeholder="例：The hotel's signature omelet" maxlength="38" oninput="updatePreview()">
             <button class="gtrans-btn" onclick="openGTrans()">Google<br>翻訳 ↗</button>
@@ -766,7 +769,7 @@ function card(item, ox, oy, W, H, isPreview) {
     const fz = Math.min(W * 0.058, 16);
     o += `<text x="${ox+W/2}" y="${bcy+fz*0.38}" text-anchor="middle" font-size="${fz}" font-weight="400" font-family="${ff}" fill="white">${cmt}</text>`;
   } else {
-    o += `<text x="${ox+W/2}" y="${bcy+5}" text-anchor="middle" font-size="9" font-family="${ff}" fill="rgba(255,255,255,0.35)">コメントなし</text>`;
+    // コメントなし時は何も表示しない
   }
 
   const nameFZ = Math.min(W * 0.075, 22);
