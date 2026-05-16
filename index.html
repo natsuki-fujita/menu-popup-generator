@@ -82,55 +82,44 @@ h1{font-size:18px;font-weight:700;margin-bottom:4px}
 .exp-font-btn.on::after{content:"✓";position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:11px}
 
 @media (max-width: 600px) {
-  /* 基本レイアウト */
-  .wrap{padding:12px 10px}
-  h1{font-size:15px}
-  .subtitle{font-size:11px}
-  .card{padding:14px 12px;border-radius:10px}
+  /* レイアウト基本 */
+  .wrap { padding: 12px 10px; }
+  h1 { font-size: 15px; }
+  .subtitle { font-size: 11px; margin-bottom: 14px; }
+  .card { padding: 14px 12px; }
 
-  /* テーマカラー＋フォントの2列グリッドのみ1列に（他のrowは影響させない） */
-  .card > .row:first-child{grid-template-columns:1fr;gap:8px}
+  /* テーマ+フォント行を縦積みに（1行目だけ） */
+  div.row:first-of-type { grid-template-columns: 1fr; }
 
-  /* テーマカラーボタン */
-  .theme-btn{width:24px;height:24px}
-  .exp-theme-btn{width:24px;height:24px}
-  .theme-row{flex-wrap:wrap;gap:7px}
+  /* メニュー名+英訳行を縦積みに */
+  div.row:nth-of-type(2) { grid-template-columns: 1fr; }
+
+  /* 説明POP内の行 */
+  #explainPopSettings div.row { grid-template-columns: 1fr; }
+
+  /* アレルゲン4列 */
+  .allergen-grid { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .allergen-icon-wrap { width: 40px; height: 40px; }
+  .allergen-item span { font-size: 10px; }
+
+  /* ボタン縦積み */
+  .btn-row { flex-direction: column; gap: 8px; }
+  .add-btn { width: 100%; text-align: center; padding: 12px; }
+  .print-btn { width: 100%; text-align: center; padding: 12px; margin-left: 0; }
 
   /* フォントボタン */
-  .font-btn{font-size:12px;padding:8px 0}
-  .exp-font-btn{font-size:12px;padding:8px 0}
-
-  /* メニュー名・英訳の2列グリッドを1列に */
-  .card > .row:nth-child(2){grid-template-columns:1fr;gap:8px}
-
-  /* 入力欄 */
-  .field input{font-size:14px;padding:9px 10px}
-  .field label{font-size:11px}
+  .font-btn { font-size: 12px; }
+  .exp-font-btn { font-size: 12px; }
 
   /* Google翻訳ボタン */
-  .gtrans-btn{padding:9px 8px;font-size:10px}
-  .gtrans-hint{font-size:10px}
-
-  /* アレルゲングリッド：4列に */
-  .allergen-grid{grid-template-columns:repeat(4,1fr);gap:8px}
-  .allergen-icon-wrap{width:42px;height:42px;border-radius:9px}
-  .allergen-item{padding:6px 4px;border-radius:10px;border-width:2px}
-  .allergen-item span{font-size:10px}
-
-  /* ボタン行 */
-  .btn-row{flex-direction:column;gap:8px}
-  .add-btn{width:100%;padding:12px;font-size:14px;text-align:center;margin-left:0}
-  .print-btn{width:100%;padding:12px;font-size:14px;text-align:center;margin-left:0}
+  .gtrans-btn { font-size: 10px; padding: 6px 8px; }
 
   /* 追加済みリスト */
-  .item-mini{font-size:12px}
-  .item-mini .act-btn{font-size:10px;padding:3px 5px}
+  .item-mini { font-size: 11px; }
+  .item-mini .act-btn { font-size: 9px; padding: 2px 5px; }
 
-  /* 説明POPの2列グリッドを1列に */
-  #explainPopSettings > .row{grid-template-columns:1fr;gap:8px}
-
-  /* プレビューラベル */
-  .preview-label{font-size:11px}
+  /* プレビュー */
+  .preview-label { font-size: 11px; }
 }
 </style>
 </head>
@@ -289,55 +278,44 @@ const SVG_ICONS = {
 .exp-font-btn.on::after{content:"✓";position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:11px}
 
 @media (max-width: 600px) {
-  /* 基本レイアウト */
-  .wrap{padding:12px 10px}
-  h1{font-size:15px}
-  .subtitle{font-size:11px}
-  .card{padding:14px 12px;border-radius:10px}
+  /* レイアウト基本 */
+  .wrap { padding: 12px 10px; }
+  h1 { font-size: 15px; }
+  .subtitle { font-size: 11px; margin-bottom: 14px; }
+  .card { padding: 14px 12px; }
 
-  /* テーマカラー＋フォントの2列グリッドのみ1列に（他のrowは影響させない） */
-  .card > .row:first-child{grid-template-columns:1fr;gap:8px}
+  /* テーマ+フォント行を縦積みに（1行目だけ） */
+  div.row:first-of-type { grid-template-columns: 1fr; }
 
-  /* テーマカラーボタン */
-  .theme-btn{width:24px;height:24px}
-  .exp-theme-btn{width:24px;height:24px}
-  .theme-row{flex-wrap:wrap;gap:7px}
+  /* メニュー名+英訳行を縦積みに */
+  div.row:nth-of-type(2) { grid-template-columns: 1fr; }
+
+  /* 説明POP内の行 */
+  #explainPopSettings div.row { grid-template-columns: 1fr; }
+
+  /* アレルゲン4列 */
+  .allergen-grid { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .allergen-icon-wrap { width: 40px; height: 40px; }
+  .allergen-item span { font-size: 10px; }
+
+  /* ボタン縦積み */
+  .btn-row { flex-direction: column; gap: 8px; }
+  .add-btn { width: 100%; text-align: center; padding: 12px; }
+  .print-btn { width: 100%; text-align: center; padding: 12px; margin-left: 0; }
 
   /* フォントボタン */
-  .font-btn{font-size:12px;padding:8px 0}
-  .exp-font-btn{font-size:12px;padding:8px 0}
-
-  /* メニュー名・英訳の2列グリッドを1列に */
-  .card > .row:nth-child(2){grid-template-columns:1fr;gap:8px}
-
-  /* 入力欄 */
-  .field input{font-size:14px;padding:9px 10px}
-  .field label{font-size:11px}
+  .font-btn { font-size: 12px; }
+  .exp-font-btn { font-size: 12px; }
 
   /* Google翻訳ボタン */
-  .gtrans-btn{padding:9px 8px;font-size:10px}
-  .gtrans-hint{font-size:10px}
-
-  /* アレルゲングリッド：4列に */
-  .allergen-grid{grid-template-columns:repeat(4,1fr);gap:8px}
-  .allergen-icon-wrap{width:42px;height:42px;border-radius:9px}
-  .allergen-item{padding:6px 4px;border-radius:10px;border-width:2px}
-  .allergen-item span{font-size:10px}
-
-  /* ボタン行 */
-  .btn-row{flex-direction:column;gap:8px}
-  .add-btn{width:100%;padding:12px;font-size:14px;text-align:center;margin-left:0}
-  .print-btn{width:100%;padding:12px;font-size:14px;text-align:center;margin-left:0}
+  .gtrans-btn { font-size: 10px; padding: 6px 8px; }
 
   /* 追加済みリスト */
-  .item-mini{font-size:12px}
-  .item-mini .act-btn{font-size:10px;padding:3px 5px}
+  .item-mini { font-size: 11px; }
+  .item-mini .act-btn { font-size: 9px; padding: 2px 5px; }
 
-  /* 説明POPの2列グリッドを1列に */
-  #explainPopSettings > .row{grid-template-columns:1fr;gap:8px}
-
-  /* プレビューラベル */
-  .preview-label{font-size:11px}
+  /* プレビュー */
+  .preview-label { font-size: 11px; }
 }
 </style>
 <path class="st0" d="M188.9,85.4c-14.1-20.9-31.7-33.3-47.1-33.3s-33,12.4-47.1,33.3c-14.2,21-22.4,46.3-22.4,69.4s7,43.1,20.3,56.8
@@ -364,55 +342,44 @@ const SVG_ICONS = {
 .exp-font-btn.on::after{content:"✓";position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:11px}
 
 @media (max-width: 600px) {
-  /* 基本レイアウト */
-  .wrap{padding:12px 10px}
-  h1{font-size:15px}
-  .subtitle{font-size:11px}
-  .card{padding:14px 12px;border-radius:10px}
+  /* レイアウト基本 */
+  .wrap { padding: 12px 10px; }
+  h1 { font-size: 15px; }
+  .subtitle { font-size: 11px; margin-bottom: 14px; }
+  .card { padding: 14px 12px; }
 
-  /* テーマカラー＋フォントの2列グリッドのみ1列に（他のrowは影響させない） */
-  .card > .row:first-child{grid-template-columns:1fr;gap:8px}
+  /* テーマ+フォント行を縦積みに（1行目だけ） */
+  div.row:first-of-type { grid-template-columns: 1fr; }
 
-  /* テーマカラーボタン */
-  .theme-btn{width:24px;height:24px}
-  .exp-theme-btn{width:24px;height:24px}
-  .theme-row{flex-wrap:wrap;gap:7px}
+  /* メニュー名+英訳行を縦積みに */
+  div.row:nth-of-type(2) { grid-template-columns: 1fr; }
+
+  /* 説明POP内の行 */
+  #explainPopSettings div.row { grid-template-columns: 1fr; }
+
+  /* アレルゲン4列 */
+  .allergen-grid { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .allergen-icon-wrap { width: 40px; height: 40px; }
+  .allergen-item span { font-size: 10px; }
+
+  /* ボタン縦積み */
+  .btn-row { flex-direction: column; gap: 8px; }
+  .add-btn { width: 100%; text-align: center; padding: 12px; }
+  .print-btn { width: 100%; text-align: center; padding: 12px; margin-left: 0; }
 
   /* フォントボタン */
-  .font-btn{font-size:12px;padding:8px 0}
-  .exp-font-btn{font-size:12px;padding:8px 0}
-
-  /* メニュー名・英訳の2列グリッドを1列に */
-  .card > .row:nth-child(2){grid-template-columns:1fr;gap:8px}
-
-  /* 入力欄 */
-  .field input{font-size:14px;padding:9px 10px}
-  .field label{font-size:11px}
+  .font-btn { font-size: 12px; }
+  .exp-font-btn { font-size: 12px; }
 
   /* Google翻訳ボタン */
-  .gtrans-btn{padding:9px 8px;font-size:10px}
-  .gtrans-hint{font-size:10px}
-
-  /* アレルゲングリッド：4列に */
-  .allergen-grid{grid-template-columns:repeat(4,1fr);gap:8px}
-  .allergen-icon-wrap{width:42px;height:42px;border-radius:9px}
-  .allergen-item{padding:6px 4px;border-radius:10px;border-width:2px}
-  .allergen-item span{font-size:10px}
-
-  /* ボタン行 */
-  .btn-row{flex-direction:column;gap:8px}
-  .add-btn{width:100%;padding:12px;font-size:14px;text-align:center;margin-left:0}
-  .print-btn{width:100%;padding:12px;font-size:14px;text-align:center;margin-left:0}
+  .gtrans-btn { font-size: 10px; padding: 6px 8px; }
 
   /* 追加済みリスト */
-  .item-mini{font-size:12px}
-  .item-mini .act-btn{font-size:10px;padding:3px 5px}
+  .item-mini { font-size: 11px; }
+  .item-mini .act-btn { font-size: 9px; padding: 2px 5px; }
 
-  /* 説明POPの2列グリッドを1列に */
-  #explainPopSettings > .row{grid-template-columns:1fr;gap:8px}
-
-  /* プレビューラベル */
-  .preview-label{font-size:11px}
+  /* プレビュー */
+  .preview-label { font-size: 11px; }
 }
 </style>
 <g>
@@ -458,55 +425,44 @@ const SVG_ICONS = {
 .exp-font-btn.on::after{content:"✓";position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:11px}
 
 @media (max-width: 600px) {
-  /* 基本レイアウト */
-  .wrap{padding:12px 10px}
-  h1{font-size:15px}
-  .subtitle{font-size:11px}
-  .card{padding:14px 12px;border-radius:10px}
+  /* レイアウト基本 */
+  .wrap { padding: 12px 10px; }
+  h1 { font-size: 15px; }
+  .subtitle { font-size: 11px; margin-bottom: 14px; }
+  .card { padding: 14px 12px; }
 
-  /* テーマカラー＋フォントの2列グリッドのみ1列に（他のrowは影響させない） */
-  .card > .row:first-child{grid-template-columns:1fr;gap:8px}
+  /* テーマ+フォント行を縦積みに（1行目だけ） */
+  div.row:first-of-type { grid-template-columns: 1fr; }
 
-  /* テーマカラーボタン */
-  .theme-btn{width:24px;height:24px}
-  .exp-theme-btn{width:24px;height:24px}
-  .theme-row{flex-wrap:wrap;gap:7px}
+  /* メニュー名+英訳行を縦積みに */
+  div.row:nth-of-type(2) { grid-template-columns: 1fr; }
+
+  /* 説明POP内の行 */
+  #explainPopSettings div.row { grid-template-columns: 1fr; }
+
+  /* アレルゲン4列 */
+  .allergen-grid { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .allergen-icon-wrap { width: 40px; height: 40px; }
+  .allergen-item span { font-size: 10px; }
+
+  /* ボタン縦積み */
+  .btn-row { flex-direction: column; gap: 8px; }
+  .add-btn { width: 100%; text-align: center; padding: 12px; }
+  .print-btn { width: 100%; text-align: center; padding: 12px; margin-left: 0; }
 
   /* フォントボタン */
-  .font-btn{font-size:12px;padding:8px 0}
-  .exp-font-btn{font-size:12px;padding:8px 0}
-
-  /* メニュー名・英訳の2列グリッドを1列に */
-  .card > .row:nth-child(2){grid-template-columns:1fr;gap:8px}
-
-  /* 入力欄 */
-  .field input{font-size:14px;padding:9px 10px}
-  .field label{font-size:11px}
+  .font-btn { font-size: 12px; }
+  .exp-font-btn { font-size: 12px; }
 
   /* Google翻訳ボタン */
-  .gtrans-btn{padding:9px 8px;font-size:10px}
-  .gtrans-hint{font-size:10px}
-
-  /* アレルゲングリッド：4列に */
-  .allergen-grid{grid-template-columns:repeat(4,1fr);gap:8px}
-  .allergen-icon-wrap{width:42px;height:42px;border-radius:9px}
-  .allergen-item{padding:6px 4px;border-radius:10px;border-width:2px}
-  .allergen-item span{font-size:10px}
-
-  /* ボタン行 */
-  .btn-row{flex-direction:column;gap:8px}
-  .add-btn{width:100%;padding:12px;font-size:14px;text-align:center;margin-left:0}
-  .print-btn{width:100%;padding:12px;font-size:14px;text-align:center;margin-left:0}
+  .gtrans-btn { font-size: 10px; padding: 6px 8px; }
 
   /* 追加済みリスト */
-  .item-mini{font-size:12px}
-  .item-mini .act-btn{font-size:10px;padding:3px 5px}
+  .item-mini { font-size: 11px; }
+  .item-mini .act-btn { font-size: 9px; padding: 2px 5px; }
 
-  /* 説明POPの2列グリッドを1列に */
-  #explainPopSettings > .row{grid-template-columns:1fr;gap:8px}
-
-  /* プレビューラベル */
-  .preview-label{font-size:11px}
+  /* プレビュー */
+  .preview-label { font-size: 11px; }
 }
 </style>
 <path class="st0" d="M177.5,163.1c0.1,8.3,13.1,21.2,17.5,21.1c4.3-0.1,17-12.6,16.8-21.6c-0.1-7.1-10.9-22-15.5-28
@@ -540,55 +496,44 @@ const SVG_ICONS = {
 .exp-font-btn.on::after{content:"✓";position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:11px}
 
 @media (max-width: 600px) {
-  /* 基本レイアウト */
-  .wrap{padding:12px 10px}
-  h1{font-size:15px}
-  .subtitle{font-size:11px}
-  .card{padding:14px 12px;border-radius:10px}
+  /* レイアウト基本 */
+  .wrap { padding: 12px 10px; }
+  h1 { font-size: 15px; }
+  .subtitle { font-size: 11px; margin-bottom: 14px; }
+  .card { padding: 14px 12px; }
 
-  /* テーマカラー＋フォントの2列グリッドのみ1列に（他のrowは影響させない） */
-  .card > .row:first-child{grid-template-columns:1fr;gap:8px}
+  /* テーマ+フォント行を縦積みに（1行目だけ） */
+  div.row:first-of-type { grid-template-columns: 1fr; }
 
-  /* テーマカラーボタン */
-  .theme-btn{width:24px;height:24px}
-  .exp-theme-btn{width:24px;height:24px}
-  .theme-row{flex-wrap:wrap;gap:7px}
+  /* メニュー名+英訳行を縦積みに */
+  div.row:nth-of-type(2) { grid-template-columns: 1fr; }
+
+  /* 説明POP内の行 */
+  #explainPopSettings div.row { grid-template-columns: 1fr; }
+
+  /* アレルゲン4列 */
+  .allergen-grid { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .allergen-icon-wrap { width: 40px; height: 40px; }
+  .allergen-item span { font-size: 10px; }
+
+  /* ボタン縦積み */
+  .btn-row { flex-direction: column; gap: 8px; }
+  .add-btn { width: 100%; text-align: center; padding: 12px; }
+  .print-btn { width: 100%; text-align: center; padding: 12px; margin-left: 0; }
 
   /* フォントボタン */
-  .font-btn{font-size:12px;padding:8px 0}
-  .exp-font-btn{font-size:12px;padding:8px 0}
-
-  /* メニュー名・英訳の2列グリッドを1列に */
-  .card > .row:nth-child(2){grid-template-columns:1fr;gap:8px}
-
-  /* 入力欄 */
-  .field input{font-size:14px;padding:9px 10px}
-  .field label{font-size:11px}
+  .font-btn { font-size: 12px; }
+  .exp-font-btn { font-size: 12px; }
 
   /* Google翻訳ボタン */
-  .gtrans-btn{padding:9px 8px;font-size:10px}
-  .gtrans-hint{font-size:10px}
-
-  /* アレルゲングリッド：4列に */
-  .allergen-grid{grid-template-columns:repeat(4,1fr);gap:8px}
-  .allergen-icon-wrap{width:42px;height:42px;border-radius:9px}
-  .allergen-item{padding:6px 4px;border-radius:10px;border-width:2px}
-  .allergen-item span{font-size:10px}
-
-  /* ボタン行 */
-  .btn-row{flex-direction:column;gap:8px}
-  .add-btn{width:100%;padding:12px;font-size:14px;text-align:center;margin-left:0}
-  .print-btn{width:100%;padding:12px;font-size:14px;text-align:center;margin-left:0}
+  .gtrans-btn { font-size: 10px; padding: 6px 8px; }
 
   /* 追加済みリスト */
-  .item-mini{font-size:12px}
-  .item-mini .act-btn{font-size:10px;padding:3px 5px}
+  .item-mini { font-size: 11px; }
+  .item-mini .act-btn { font-size: 9px; padding: 2px 5px; }
 
-  /* 説明POPの2列グリッドを1列に */
-  #explainPopSettings > .row{grid-template-columns:1fr;gap:8px}
-
-  /* プレビューラベル */
-  .preview-label{font-size:11px}
+  /* プレビュー */
+  .preview-label { font-size: 11px; }
 }
 </style>
 <g>
@@ -630,55 +575,44 @@ const SVG_ICONS = {
 .exp-font-btn.on::after{content:"✓";position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:11px}
 
 @media (max-width: 600px) {
-  /* 基本レイアウト */
-  .wrap{padding:12px 10px}
-  h1{font-size:15px}
-  .subtitle{font-size:11px}
-  .card{padding:14px 12px;border-radius:10px}
+  /* レイアウト基本 */
+  .wrap { padding: 12px 10px; }
+  h1 { font-size: 15px; }
+  .subtitle { font-size: 11px; margin-bottom: 14px; }
+  .card { padding: 14px 12px; }
 
-  /* テーマカラー＋フォントの2列グリッドのみ1列に（他のrowは影響させない） */
-  .card > .row:first-child{grid-template-columns:1fr;gap:8px}
+  /* テーマ+フォント行を縦積みに（1行目だけ） */
+  div.row:first-of-type { grid-template-columns: 1fr; }
 
-  /* テーマカラーボタン */
-  .theme-btn{width:24px;height:24px}
-  .exp-theme-btn{width:24px;height:24px}
-  .theme-row{flex-wrap:wrap;gap:7px}
+  /* メニュー名+英訳行を縦積みに */
+  div.row:nth-of-type(2) { grid-template-columns: 1fr; }
+
+  /* 説明POP内の行 */
+  #explainPopSettings div.row { grid-template-columns: 1fr; }
+
+  /* アレルゲン4列 */
+  .allergen-grid { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .allergen-icon-wrap { width: 40px; height: 40px; }
+  .allergen-item span { font-size: 10px; }
+
+  /* ボタン縦積み */
+  .btn-row { flex-direction: column; gap: 8px; }
+  .add-btn { width: 100%; text-align: center; padding: 12px; }
+  .print-btn { width: 100%; text-align: center; padding: 12px; margin-left: 0; }
 
   /* フォントボタン */
-  .font-btn{font-size:12px;padding:8px 0}
-  .exp-font-btn{font-size:12px;padding:8px 0}
-
-  /* メニュー名・英訳の2列グリッドを1列に */
-  .card > .row:nth-child(2){grid-template-columns:1fr;gap:8px}
-
-  /* 入力欄 */
-  .field input{font-size:14px;padding:9px 10px}
-  .field label{font-size:11px}
+  .font-btn { font-size: 12px; }
+  .exp-font-btn { font-size: 12px; }
 
   /* Google翻訳ボタン */
-  .gtrans-btn{padding:9px 8px;font-size:10px}
-  .gtrans-hint{font-size:10px}
-
-  /* アレルゲングリッド：4列に */
-  .allergen-grid{grid-template-columns:repeat(4,1fr);gap:8px}
-  .allergen-icon-wrap{width:42px;height:42px;border-radius:9px}
-  .allergen-item{padding:6px 4px;border-radius:10px;border-width:2px}
-  .allergen-item span{font-size:10px}
-
-  /* ボタン行 */
-  .btn-row{flex-direction:column;gap:8px}
-  .add-btn{width:100%;padding:12px;font-size:14px;text-align:center;margin-left:0}
-  .print-btn{width:100%;padding:12px;font-size:14px;text-align:center;margin-left:0}
+  .gtrans-btn { font-size: 10px; padding: 6px 8px; }
 
   /* 追加済みリスト */
-  .item-mini{font-size:12px}
-  .item-mini .act-btn{font-size:10px;padding:3px 5px}
+  .item-mini { font-size: 11px; }
+  .item-mini .act-btn { font-size: 9px; padding: 2px 5px; }
 
-  /* 説明POPの2列グリッドを1列に */
-  #explainPopSettings > .row{grid-template-columns:1fr;gap:8px}
-
-  /* プレビューラベル */
-  .preview-label{font-size:11px}
+  /* プレビュー */
+  .preview-label { font-size: 11px; }
 }
 </style>
 <g>
@@ -722,55 +656,44 @@ const SVG_ICONS = {
 .exp-font-btn.on::after{content:"✓";position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:11px}
 
 @media (max-width: 600px) {
-  /* 基本レイアウト */
-  .wrap{padding:12px 10px}
-  h1{font-size:15px}
-  .subtitle{font-size:11px}
-  .card{padding:14px 12px;border-radius:10px}
+  /* レイアウト基本 */
+  .wrap { padding: 12px 10px; }
+  h1 { font-size: 15px; }
+  .subtitle { font-size: 11px; margin-bottom: 14px; }
+  .card { padding: 14px 12px; }
 
-  /* テーマカラー＋フォントの2列グリッドのみ1列に（他のrowは影響させない） */
-  .card > .row:first-child{grid-template-columns:1fr;gap:8px}
+  /* テーマ+フォント行を縦積みに（1行目だけ） */
+  div.row:first-of-type { grid-template-columns: 1fr; }
 
-  /* テーマカラーボタン */
-  .theme-btn{width:24px;height:24px}
-  .exp-theme-btn{width:24px;height:24px}
-  .theme-row{flex-wrap:wrap;gap:7px}
+  /* メニュー名+英訳行を縦積みに */
+  div.row:nth-of-type(2) { grid-template-columns: 1fr; }
+
+  /* 説明POP内の行 */
+  #explainPopSettings div.row { grid-template-columns: 1fr; }
+
+  /* アレルゲン4列 */
+  .allergen-grid { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .allergen-icon-wrap { width: 40px; height: 40px; }
+  .allergen-item span { font-size: 10px; }
+
+  /* ボタン縦積み */
+  .btn-row { flex-direction: column; gap: 8px; }
+  .add-btn { width: 100%; text-align: center; padding: 12px; }
+  .print-btn { width: 100%; text-align: center; padding: 12px; margin-left: 0; }
 
   /* フォントボタン */
-  .font-btn{font-size:12px;padding:8px 0}
-  .exp-font-btn{font-size:12px;padding:8px 0}
-
-  /* メニュー名・英訳の2列グリッドを1列に */
-  .card > .row:nth-child(2){grid-template-columns:1fr;gap:8px}
-
-  /* 入力欄 */
-  .field input{font-size:14px;padding:9px 10px}
-  .field label{font-size:11px}
+  .font-btn { font-size: 12px; }
+  .exp-font-btn { font-size: 12px; }
 
   /* Google翻訳ボタン */
-  .gtrans-btn{padding:9px 8px;font-size:10px}
-  .gtrans-hint{font-size:10px}
-
-  /* アレルゲングリッド：4列に */
-  .allergen-grid{grid-template-columns:repeat(4,1fr);gap:8px}
-  .allergen-icon-wrap{width:42px;height:42px;border-radius:9px}
-  .allergen-item{padding:6px 4px;border-radius:10px;border-width:2px}
-  .allergen-item span{font-size:10px}
-
-  /* ボタン行 */
-  .btn-row{flex-direction:column;gap:8px}
-  .add-btn{width:100%;padding:12px;font-size:14px;text-align:center;margin-left:0}
-  .print-btn{width:100%;padding:12px;font-size:14px;text-align:center;margin-left:0}
+  .gtrans-btn { font-size: 10px; padding: 6px 8px; }
 
   /* 追加済みリスト */
-  .item-mini{font-size:12px}
-  .item-mini .act-btn{font-size:10px;padding:3px 5px}
+  .item-mini { font-size: 11px; }
+  .item-mini .act-btn { font-size: 9px; padding: 2px 5px; }
 
-  /* 説明POPの2列グリッドを1列に */
-  #explainPopSettings > .row{grid-template-columns:1fr;gap:8px}
-
-  /* プレビューラベル */
-  .preview-label{font-size:11px}
+  /* プレビュー */
+  .preview-label { font-size: 11px; }
 }
 </style>
 <path class="st0" d="M74,85.1c2.6-0.5,8.3,4.2,26.1,8.4c17.8,4.1,60.2,6.8,66.5,19.9c6.2,13.1-24,43.8-47.9,34.2
@@ -809,55 +732,44 @@ const SVG_ICONS = {
 .exp-font-btn.on::after{content:"✓";position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:11px}
 
 @media (max-width: 600px) {
-  /* 基本レイアウト */
-  .wrap{padding:12px 10px}
-  h1{font-size:15px}
-  .subtitle{font-size:11px}
-  .card{padding:14px 12px;border-radius:10px}
+  /* レイアウト基本 */
+  .wrap { padding: 12px 10px; }
+  h1 { font-size: 15px; }
+  .subtitle { font-size: 11px; margin-bottom: 14px; }
+  .card { padding: 14px 12px; }
 
-  /* テーマカラー＋フォントの2列グリッドのみ1列に（他のrowは影響させない） */
-  .card > .row:first-child{grid-template-columns:1fr;gap:8px}
+  /* テーマ+フォント行を縦積みに（1行目だけ） */
+  div.row:first-of-type { grid-template-columns: 1fr; }
 
-  /* テーマカラーボタン */
-  .theme-btn{width:24px;height:24px}
-  .exp-theme-btn{width:24px;height:24px}
-  .theme-row{flex-wrap:wrap;gap:7px}
+  /* メニュー名+英訳行を縦積みに */
+  div.row:nth-of-type(2) { grid-template-columns: 1fr; }
+
+  /* 説明POP内の行 */
+  #explainPopSettings div.row { grid-template-columns: 1fr; }
+
+  /* アレルゲン4列 */
+  .allergen-grid { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .allergen-icon-wrap { width: 40px; height: 40px; }
+  .allergen-item span { font-size: 10px; }
+
+  /* ボタン縦積み */
+  .btn-row { flex-direction: column; gap: 8px; }
+  .add-btn { width: 100%; text-align: center; padding: 12px; }
+  .print-btn { width: 100%; text-align: center; padding: 12px; margin-left: 0; }
 
   /* フォントボタン */
-  .font-btn{font-size:12px;padding:8px 0}
-  .exp-font-btn{font-size:12px;padding:8px 0}
-
-  /* メニュー名・英訳の2列グリッドを1列に */
-  .card > .row:nth-child(2){grid-template-columns:1fr;gap:8px}
-
-  /* 入力欄 */
-  .field input{font-size:14px;padding:9px 10px}
-  .field label{font-size:11px}
+  .font-btn { font-size: 12px; }
+  .exp-font-btn { font-size: 12px; }
 
   /* Google翻訳ボタン */
-  .gtrans-btn{padding:9px 8px;font-size:10px}
-  .gtrans-hint{font-size:10px}
-
-  /* アレルゲングリッド：4列に */
-  .allergen-grid{grid-template-columns:repeat(4,1fr);gap:8px}
-  .allergen-icon-wrap{width:42px;height:42px;border-radius:9px}
-  .allergen-item{padding:6px 4px;border-radius:10px;border-width:2px}
-  .allergen-item span{font-size:10px}
-
-  /* ボタン行 */
-  .btn-row{flex-direction:column;gap:8px}
-  .add-btn{width:100%;padding:12px;font-size:14px;text-align:center;margin-left:0}
-  .print-btn{width:100%;padding:12px;font-size:14px;text-align:center;margin-left:0}
+  .gtrans-btn { font-size: 10px; padding: 6px 8px; }
 
   /* 追加済みリスト */
-  .item-mini{font-size:12px}
-  .item-mini .act-btn{font-size:10px;padding:3px 5px}
+  .item-mini { font-size: 11px; }
+  .item-mini .act-btn { font-size: 9px; padding: 2px 5px; }
 
-  /* 説明POPの2列グリッドを1列に */
-  #explainPopSettings > .row{grid-template-columns:1fr;gap:8px}
-
-  /* プレビューラベル */
-  .preview-label{font-size:11px}
+  /* プレビュー */
+  .preview-label { font-size: 11px; }
 }
 </style>
 <path class="st0" d="M180.9,150.1c3.4-2.2,7.8-5.8,11.2-10.9c3.4-5.1,5.7-11.7,7.2-16.8c0.3-0.2,0.6-0.3,0.8-0.5
@@ -903,55 +815,44 @@ const SVG_ICONS = {
 .exp-font-btn.on::after{content:"✓";position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:11px}
 
 @media (max-width: 600px) {
-  /* 基本レイアウト */
-  .wrap{padding:12px 10px}
-  h1{font-size:15px}
-  .subtitle{font-size:11px}
-  .card{padding:14px 12px;border-radius:10px}
+  /* レイアウト基本 */
+  .wrap { padding: 12px 10px; }
+  h1 { font-size: 15px; }
+  .subtitle { font-size: 11px; margin-bottom: 14px; }
+  .card { padding: 14px 12px; }
 
-  /* テーマカラー＋フォントの2列グリッドのみ1列に（他のrowは影響させない） */
-  .card > .row:first-child{grid-template-columns:1fr;gap:8px}
+  /* テーマ+フォント行を縦積みに（1行目だけ） */
+  div.row:first-of-type { grid-template-columns: 1fr; }
 
-  /* テーマカラーボタン */
-  .theme-btn{width:24px;height:24px}
-  .exp-theme-btn{width:24px;height:24px}
-  .theme-row{flex-wrap:wrap;gap:7px}
+  /* メニュー名+英訳行を縦積みに */
+  div.row:nth-of-type(2) { grid-template-columns: 1fr; }
+
+  /* 説明POP内の行 */
+  #explainPopSettings div.row { grid-template-columns: 1fr; }
+
+  /* アレルゲン4列 */
+  .allergen-grid { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .allergen-icon-wrap { width: 40px; height: 40px; }
+  .allergen-item span { font-size: 10px; }
+
+  /* ボタン縦積み */
+  .btn-row { flex-direction: column; gap: 8px; }
+  .add-btn { width: 100%; text-align: center; padding: 12px; }
+  .print-btn { width: 100%; text-align: center; padding: 12px; margin-left: 0; }
 
   /* フォントボタン */
-  .font-btn{font-size:12px;padding:8px 0}
-  .exp-font-btn{font-size:12px;padding:8px 0}
-
-  /* メニュー名・英訳の2列グリッドを1列に */
-  .card > .row:nth-child(2){grid-template-columns:1fr;gap:8px}
-
-  /* 入力欄 */
-  .field input{font-size:14px;padding:9px 10px}
-  .field label{font-size:11px}
+  .font-btn { font-size: 12px; }
+  .exp-font-btn { font-size: 12px; }
 
   /* Google翻訳ボタン */
-  .gtrans-btn{padding:9px 8px;font-size:10px}
-  .gtrans-hint{font-size:10px}
-
-  /* アレルゲングリッド：4列に */
-  .allergen-grid{grid-template-columns:repeat(4,1fr);gap:8px}
-  .allergen-icon-wrap{width:42px;height:42px;border-radius:9px}
-  .allergen-item{padding:6px 4px;border-radius:10px;border-width:2px}
-  .allergen-item span{font-size:10px}
-
-  /* ボタン行 */
-  .btn-row{flex-direction:column;gap:8px}
-  .add-btn{width:100%;padding:12px;font-size:14px;text-align:center;margin-left:0}
-  .print-btn{width:100%;padding:12px;font-size:14px;text-align:center;margin-left:0}
+  .gtrans-btn { font-size: 10px; padding: 6px 8px; }
 
   /* 追加済みリスト */
-  .item-mini{font-size:12px}
-  .item-mini .act-btn{font-size:10px;padding:3px 5px}
+  .item-mini { font-size: 11px; }
+  .item-mini .act-btn { font-size: 9px; padding: 2px 5px; }
 
-  /* 説明POPの2列グリッドを1列に */
-  #explainPopSettings > .row{grid-template-columns:1fr;gap:8px}
-
-  /* プレビューラベル */
-  .preview-label{font-size:11px}
+  /* プレビュー */
+  .preview-label { font-size: 11px; }
 }
 </style>
 <path class="st0" d="M223.7,143c-0.1-2.1-2.6-3.9-2.9-5.9c-0.3-2.1-0.1-4.1-0.5-6.1c-0.5-2-0.3-4.2-0.9-6.2c-0.6-2-2.2-3.6-3-5.5
@@ -1248,55 +1149,44 @@ function printExplainPop() {
   const win = window.open('', '_blank');
   win.document.write('<!DOCTYPE html><html><head><meta charset="UTF-8"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet"><style>@page{size:A5 portrait;margin:0}*{margin:0;padding:0;box-sizing:border-box}body{width:148mm;height:210mm;overflow:hidden}svg{width:148mm;height:210mm;display:block}@media print{body{width:148mm;height:210mm}}
 @media (max-width: 600px) {
-  /* 基本レイアウト */
-  .wrap{padding:12px 10px}
-  h1{font-size:15px}
-  .subtitle{font-size:11px}
-  .card{padding:14px 12px;border-radius:10px}
+  /* レイアウト基本 */
+  .wrap { padding: 12px 10px; }
+  h1 { font-size: 15px; }
+  .subtitle { font-size: 11px; margin-bottom: 14px; }
+  .card { padding: 14px 12px; }
 
-  /* テーマカラー＋フォントの2列グリッドのみ1列に（他のrowは影響させない） */
-  .card > .row:first-child{grid-template-columns:1fr;gap:8px}
+  /* テーマ+フォント行を縦積みに（1行目だけ） */
+  div.row:first-of-type { grid-template-columns: 1fr; }
 
-  /* テーマカラーボタン */
-  .theme-btn{width:24px;height:24px}
-  .exp-theme-btn{width:24px;height:24px}
-  .theme-row{flex-wrap:wrap;gap:7px}
+  /* メニュー名+英訳行を縦積みに */
+  div.row:nth-of-type(2) { grid-template-columns: 1fr; }
+
+  /* 説明POP内の行 */
+  #explainPopSettings div.row { grid-template-columns: 1fr; }
+
+  /* アレルゲン4列 */
+  .allergen-grid { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .allergen-icon-wrap { width: 40px; height: 40px; }
+  .allergen-item span { font-size: 10px; }
+
+  /* ボタン縦積み */
+  .btn-row { flex-direction: column; gap: 8px; }
+  .add-btn { width: 100%; text-align: center; padding: 12px; }
+  .print-btn { width: 100%; text-align: center; padding: 12px; margin-left: 0; }
 
   /* フォントボタン */
-  .font-btn{font-size:12px;padding:8px 0}
-  .exp-font-btn{font-size:12px;padding:8px 0}
-
-  /* メニュー名・英訳の2列グリッドを1列に */
-  .card > .row:nth-child(2){grid-template-columns:1fr;gap:8px}
-
-  /* 入力欄 */
-  .field input{font-size:14px;padding:9px 10px}
-  .field label{font-size:11px}
+  .font-btn { font-size: 12px; }
+  .exp-font-btn { font-size: 12px; }
 
   /* Google翻訳ボタン */
-  .gtrans-btn{padding:9px 8px;font-size:10px}
-  .gtrans-hint{font-size:10px}
-
-  /* アレルゲングリッド：4列に */
-  .allergen-grid{grid-template-columns:repeat(4,1fr);gap:8px}
-  .allergen-icon-wrap{width:42px;height:42px;border-radius:9px}
-  .allergen-item{padding:6px 4px;border-radius:10px;border-width:2px}
-  .allergen-item span{font-size:10px}
-
-  /* ボタン行 */
-  .btn-row{flex-direction:column;gap:8px}
-  .add-btn{width:100%;padding:12px;font-size:14px;text-align:center;margin-left:0}
-  .print-btn{width:100%;padding:12px;font-size:14px;text-align:center;margin-left:0}
+  .gtrans-btn { font-size: 10px; padding: 6px 8px; }
 
   /* 追加済みリスト */
-  .item-mini{font-size:12px}
-  .item-mini .act-btn{font-size:10px;padding:3px 5px}
+  .item-mini { font-size: 11px; }
+  .item-mini .act-btn { font-size: 9px; padding: 2px 5px; }
 
-  /* 説明POPの2列グリッドを1列に */
-  #explainPopSettings > .row{grid-template-columns:1fr;gap:8px}
-
-  /* プレビューラベル */
-  .preview-label{font-size:11px}
+  /* プレビュー */
+  .preview-label { font-size: 11px; }
 }
 </style></head><body>' + svg + '</body></html>');
   win.document.close();
