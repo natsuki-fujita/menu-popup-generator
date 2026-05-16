@@ -73,16 +73,23 @@ h1{font-size:18px;font-weight:700;margin-bottom:4px}
 .toggle-track.on{background:#1a1a1a}
 .toggle-thumb{width:16px;height:16px;border-radius:50%;background:white;position:absolute;top:2px;left:2px;transition:left .2s;box-shadow:0 1px 3px rgba(0,0,0,.3)}
 .toggle-track.on .toggle-thumb{left:18px}
+
+.exp-theme-btn{width:28px;height:28px;border-radius:50%;cursor:pointer;border:3px solid transparent;transition:all .15s;flex-shrink:0}
+.exp-theme-btn.on{outline:3px solid #333;outline-offset:2px}
+.exp-font-btn{flex:1;padding:7px 0;text-align:center;cursor:pointer;font-size:13px;background:white;color:#888;border:none;transition:all .15s;font-family:inherit;position:relative}
+.exp-font-btn:first-child{border-right:1px solid #ddd}
+.exp-font-btn.on{background:#1a1a1a;color:white;font-weight:500}
+.exp-font-btn.on::after{content:"✓";position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:11px}
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="no-print">
     <div style="display:flex;align-items:center;gap:16px;margin-bottom:4px">
-      <h1>メニュー札ジェネレーター</h1>
+      <h1>ビュッフェ会場用メニュー札メーカー</h1>
       <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJf6buSIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MDkuNjQiIGhlaWdodD0iMTQ2LjY3IiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmlld0JveD0iMCAwIDUwOS42NCAxNDYuNjciPjxkZWZzPjxzdHlsZT4uY2xzLTF7bWFzazp1cmwoI21hc2spO30uY2xzLTJ7ZmlsdGVyOnVybCgjbHVtaW5vc2l0eS1pbnZlcnQpO30uY2xzLTN7ZmlsbDojMDQwMDAwO30uY2xzLTR7ZmlsbDp1cmwoI1/lkI3np7DmnKroqK3lrprjgrDjg6njg4fjg7zjgrfjg6fjg7NfNCk7fTwvc3R5bGU+PGZpbHRlciBpZD0ibHVtaW5vc2l0eS1pbnZlcnQiIHg9IjIwLjMxIiB5PSI3LjYzIiB3aWR0aD0iNDY1LjMxIiBoZWlnaHQ9IjEzOS40NSIgY29sb3ItaW50ZXJwb2xhdGlvbi1maWx0ZXJzPSJzUkdCIiBmaWx0ZXJVbml0cz0idXNlclNwYWNlT25Vc2UiPjxmZUNvbG9yTWF0cml4IHJlc3VsdD0iY20iIHZhbHVlcz0iLTEgMCAwIDAgMSAwIC0xIDAgMCAxIDAgMCAtMSAwIDEgMCAwIDAgMSAwIi8+PC9maWx0ZXI+PG1hc2sgaWQ9Im1hc2siIHg9IjIwLjMxIiB5PSI3LjYzIiB3aWR0aD0iNDY1LjMxIiBoZWlnaHQ9IjEzOS40NSIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PGcgY2xhc3M9ImNscy0yIj48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Im03MS44OSwxMTAuNzdjLTguODMsMC0xNi45MS01LjU5LTE4LjkxLTEyLjQ3bC02LjAyLDMyLjg3aC01LjcyYy01LjIsMC04LjUtMi4wOC04LjY1LTcuNjctLjA0LTEuNDMuMzEtMy4xMi42NS00LjgxbDguMi00My43OGMyLjI3LTEyLjM0LDcuODUtMzcuMjksMzYuOTUtMzcuMjksNC40MiwwLDI5LjY5LDIuNzMsMzAuNDEsMjkuNzUuMiwxMi4zNC02LjI2LDQzLjM5LTM2LjkyLDQzLjM5Wm01LjA2LTU5LjM3Yy0xNS40NiwwLTIwLjA2LDE3LjgtMTkuNzYsMjkuMjMuMzIsMTIuMjEsNy44MywxNi4xMSwxNC45OCwxNi4xMSwxNC41NSwwLDIwLjEyLTE1LjU5LDE5LjkxLTI4LjQ1LS4yNy0xMC4xMy02LjAzLTE2Ljg5LTE1LjEzLTE2Ljg5WiIvPjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0ibTE2NC45NCw0OC40MWwtMS4yNyw1Ljk4aC0uNjVjLTIuNjUtMS45NS01LjM5LTIuNDctOC42NC0yLjQ3LTkuNjEsMC0xMy4xOSw3LjQtMTQuODksMTYuNWwtNy41LDQwLjc5aC01LjJjLTUuNTksMC04LjktMi42LTkuMDUtOC4xOC0uMDMtMS4xNy4wNi0yLjQ3LjI5LTMuNzdsNi4wNC0zMi4wOWMyLjUxLTEzLjEyLDEwLjU5LTI3LjE1LDI3LjYtMjcuMTUsNy4xNSwwLDEzLjMxLDIuMzQsMTMuNDYsNy43OS4wMi43OC0uMDgsMS44Mi0uMTksMi42WiIvPjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0ibTE5MS4yNiw4MC43NmgtOC43bC4wMywxLjNjLjM3LDE0LjE2LDExLjMyLDE1LjMzLDE3LjY4LDE1LjMzLDkuMjIsMCwxNS44LTEuOTUsMjEuNDEtNS45OGguNTJsLS42Niw0LjU1Yy0xLjQ0LDkuNDgtMTAuOTEsMTQuOTQtMjYuMzcsMTQuOTQtOS43NCwwLTI4LjItNS4zMy0yOC44NS0yOS44OHYtLjUyYy0uMTUtMTAuMjYsNy4zLTQzLDM5LTQzLDcuNjYsMCwyNS4yLDQuOTQsMjUuNjUsMjEuODMuMzksMTQuODEtOS4xOCwyMS40NC0zOS43MSwyMS40NFptMTIuMi0zMC4wMWMtMTIuNDcsMC0xNy45MiwxMC4xMy0xOS4zMywxNS44NWwtLjU4LDIuNDdoOC4zMWM1Ljk4LDAsMTEuMDMtLjM5LDE0LjUzLS45MSw1LjY5LS45MSw5LjM5LTMuMzgsOS4yNy04LjE4LS4xOS03LjAyLTYuMzUtOS4yMi0xMi4yLTkuMjJaIi8+PHBhdGggY2xhc3M9ImNscy0zIiBkPSJtMjk0LjQ2LDUzLjA5bC0uOTEsNC44MWgtLjM5Yy0zLjc1LTQuMjktMTEuODctNi43Ni0xOC44OS02Ljc2LTUuOTgsMC0xNS40NC45MS0xNS4zNiw4LjgzLjEsMy43NywzLjI2LDUuMzMsMTMuNiw4LjMxLDkuOTUsMi44NiwxNy41MSw4LjcsMTcuNzQsMTcuNTQuMzQsMTIuNzMtOS42LDI1LjA3LTMxLjQzLDI1LjA3LTEwLjkxLDAtMjAuNjUtNC42OC0yMC44NS0xMi4yMS0uMDMtMS4xNy0uMDctMi42LjE2LTMuOWwxLjA1LTQuNjhoLjI2YzQuMTUsNC41NSwxMy4wNSw3LjI3LDIwLjU5LDcuMjcsNi4xMSwwLDE0LjE0LS42NSwxMy45MS05LjYxLS4xMi00LjY4LTQuOTctNi4yNC0xNS4xOS05LjQ4LTkuNTctMy4xMi0xNS43OS03LjUzLTE2LjAyLTE2LjM3LS4yMy04LjgzLDYuNjMtMjQuMjksMzEuNTgtMjQuMjksOS43NCwwLDIwLjIzLDMuNjQsMjAuNDUsMTEuOTUuMDMsMS4wNC0uMDcsMi4zNC0uMywzLjUxWiIvPjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0ibTM1OC4zNyw1My4wOWwtLjkxLDQuODFoLS4zOWMtMy43NS00LjI5LTExLjg3LTYuNzYtMTguODktNi43Ni01Ljk4LDAtMTUuNDQuOTEtMTUuMzYsOC44My4xLDMuNzcsMy4yNiw1LjMzLDEzLjYsOC4zMSw5Ljk1LDIuODYsMTcuNTEsOC43LDE3Ljc0LDE3LjU0LjM0LDEyLjczLTkuNiwyNS4wNy0zMS40MywyNS4wNy0xMC45MSwwLTIwLjY1LTQuNjgtMjAuODUtMTIuMjEtLjAzLTEuMTctLjA3LTIuNi4xNi0zLjlsMS4wNS00LjY4aC4yNmM0LjE1LDQuNTUsMTMuMDUsNy4yNywyMC41OSw3LjI3LDYuMTEsMCwxNC4xNC0uNjUsMTMuOTEtOS42MS0uMTItNC42OC00Ljk3LTYuMjQtMTUuMTktOS40OC05LjU3LTMuMTItMTUuNzktNy41My0xNi4wMi0xNi4zNy0uMjMtOC44Myw2LjYzLTI0LjI5LDMxLjU4LTI0LjI5LDkuNzQsMCwyMC4yMywzLjY0LDIwLjQ1LDExLjk1LjAzLDEuMDQtLjA3LDIuMzQtLjMsMy41MVoiLz48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Im0zOTguMzQsMTAwLjc3Yy0xLjExLDcuMDItNi42NCw5LjIyLTEzLjc5LDkuMjItOS42MSwwLTE3LjI5LTUuMzMtMTcuNTctMTYuMTEtLjA4LTIuODYsMC00Ljk0LjQ2LTcuMTVsMTMuMy03MS44NGg1LjMzYzUuNzIsMCw5LjE2LDIuNDcsOS4zMSw4LjE4LjAzLDEuMy0uMDYsMi43My0uNDEsNC4yOWwtMTAuODEsNTcuOTRjLS4yMywxLjE3LS4zMywyLjM0LS4zLDMuMzguMTcsNi4zNyw1LjI2LDcuMjgsMTEuMSw3LjI4aDQuMTZsLS43OCw0LjgxWiIvPjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0ibTQ3NC4wMiw0OS4xOWMtNC44NCwxMy4zOC0xNC44OSwzMS4zMS0yNS4zOSw0Ny4xNi0xNi4xMiwyNC4yOS0yNS45NSwzNS44Ni0zOS41OSwzNS44Ni03LjkyLDAtOS42MS00LjY4LTkuNjgtNy41NC0uMDItLjc4LS4wMy0xLjE3LjItMi4zNGwuODEtMy45aDcuMjhjOC4xOCwwLDEzLjA2LTcuNDEsMTcuNTUtMTQuMTYtNi43Ni0xNC45NC0xMi41LTQwLjQtMTMuMDItNjAuMDJsLS4xMy01LjA3aDguMzFjNC44MSwwLDcuODgsMy4xMiw4LjE0LDguMDUuMDQsMS40My4yMiwzLjM4LjM5LDQuODEsMS4xMiwxMi43MywzLjEzLDI1LjIsNy4wOSwzNy4yOSw5Ljc3LTEzLjY0LDIwLjc4LTM0LjgyLDI1LjU3LTUwLjE1aDcuOTJjMy43NywwLDYuMDEsMS4zLDYuMSw0LjU1LjA1LDEuODItLjgxLDMuNjQtMS41NCw1LjQ2WiIvPjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0ibTQ2Ni42MSwxMDYuMzRsLTEuMDMtMi4xN2gtMS4wNHYyLjE3aC0uOXYtNS4zNmgxLjgyYzEuMjMsMCwxLjk3LjU0LDEuOTcsMS42LDAsLjc0LS4zNSwxLjIxLS45NywxLjQ0bDEuMTQsMi4zMmgtLjk5Wm0tMS4yMS0yLjk1Yy43NiwwLDEuMTMtLjIsMS4xMy0uODFzLS4zNy0uODItMS4xMy0uODJoLS44NnYxLjYyaC44NloiLz48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Im00NjUuNDIsMTA5LjcxYy0zLjI5LDAtNS45Ni0yLjY3LTUuOTYtNS45NnMyLjY3LTUuOTYsNS45Ni01Ljk2LDUuOTYsMi42Nyw1Ljk2LDUuOTYtMi42Nyw1Ljk2LTUuOTYsNS45NlptMC0xMC45OGMtMi43NywwLTUuMDIsMi4yNS01LjAyLDUuMDJzMi4yNSw1LjAyLDUuMDIsNS4wMiw1LjAyLTIuMjUsNS4wMi01LjAyLTIuMjUtNS4wMi01LjAyLTUuMDJaIi8+PC9nPjwvbWFzaz48bGluZWFyR3JhZGllbnQgaWQ9Il/lkI3np7DmnKroqK3lrprjgrDjg6njg4fjg7zjgrfjg6fjg7NfNCIgeDE9IjE2NC42MSIgeTE9IjIzMC4zOSIgeDI9IjM0MS4zMiIgeTI9Ii03NS42OCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmYjYwMCIvPjxzdG9wIG9mZnNldD0iLjUiIHN0b3AtY29sb3I9IiNmY2JlMDgiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmOWNkMTYiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48ZyBjbGFzcz0iY2xzLTEiPjxyZWN0IGNsYXNzPSJjbHMtNCIgeD0iMjAuMzEiIHk9IjcuNjMiIHdpZHRoPSI0NjUuMzEiIGhlaWdodD0iMTM5LjQ1Ii8+PC9nPjwvc3ZnPg==" style="height:28px;object-fit:contain;display:block">
     </div>
-    <p class="subtitle">ホテルバイキング用アレルゲン付きメニュー札 ／ A4縦・2列×5行・最大10枚</p>
+    <p class="subtitle">ビュッフェ用アレルゲン付きメニュー札 ／ A4縦・2列×5行・最大10枚</p>
     <div class="card">
       <div class="row">
         <div class="field">
@@ -150,6 +157,51 @@ h1{font-size:18px;font-weight:700;margin-bottom:4px}
         <button class="add-btn" onclick="addItem()">＋ このメニューを追加</button>
         <button class="print-btn" onclick="doPrint()">印刷・PDF出力 ↗</button>
       </div>
+
+      <div style="margin-top:14px;padding-top:14px;border-top:1px solid #eee">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+          <span style="font-size:12px;font-weight:500;color:#1a1a1a">アレルゲン説明POPも生成する<br><span style="font-size:10px;font-weight:400;color:#999">ビュッフェ会場の入り口への設置を推奨します</span></span>
+          <div class="toggle-wrap" onclick="toggleExplainPop()">
+            <div class="toggle-track" id="explainToggleTrack">
+              <div class="toggle-thumb" id="explainToggleThumb"></div>
+            </div>
+            <span id="explainToggleLabel" style="font-size:11px;color:#666">オフ</span>
+          </div>
+        </div>
+        <div id="explainPopSettings" style="display:none">
+          <div class="row" style="margin-bottom:10px">
+            <div class="field">
+              <label>テーマカラー（説明POP用）</label>
+              <div class="theme-row" id="explainThemeRow">
+                <div class="exp-theme-btn on" style="background:#42210B" data-color="#42210B" title="ノーマル" onclick="selectExplainTheme(this)"></div>
+                <div class="exp-theme-btn" style="background:#000A46" data-color="#000A46" title="シック" onclick="selectExplainTheme(this)"></div>
+                <div class="exp-theme-btn" style="background:#5EAA57" data-color="#5EAA57" title="グリーン" onclick="selectExplainTheme(this)"></div>
+                <div class="exp-theme-btn" style="background:#EF9484" data-color="#EF9484" title="ナチュラル" onclick="selectExplainTheme(this)"></div>
+                <div class="exp-theme-btn" style="background:#F77E1E" data-color="#F77E1E" title="エネルギッシュ" onclick="selectExplainTheme(this)"></div>
+                <div class="exp-theme-btn" style="background:#3CBDDF" data-color="#3CBDDF" title="クール" onclick="selectExplainTheme(this)"></div>
+                <div class="exp-theme-btn" style="background:#BB0000" data-color="#BB0000" title="パッション" onclick="selectExplainTheme(this)"></div>
+                <div class="exp-theme-btn" style="background:#666666" data-color="#666666" title="モノクロ" onclick="selectExplainTheme(this)"></div>
+              </div>
+            </div>
+            <div class="field">
+              <label>フォント（説明POP用）</label>
+              <div class="font-row">
+                <button class="exp-font-btn on" data-font="Noto Sans JP" onclick="selectExplainFont(this)">ゴシック体</button>
+                <button class="exp-font-btn" data-font="Noto Serif JP" onclick="selectExplainFont(this)">明朝体</button>
+              </div>
+            </div>
+          </div>
+          <div class="field" style="margin-bottom:10px">
+            <label>施設ロゴ（任意・PNG/SVG推奨）</label>
+            <input type="file" id="explainLogoInput" accept="image/*,image/svg+xml" onchange="onExplainLogoUpload(event)" style="font-size:12px">
+            <div id="explainLogoPreviewWrap" style="margin-top:6px;display:none">
+              <img id="explainLogoPreview" style="max-height:40px;max-width:140px;object-fit:contain;border:1px solid #eee;border-radius:4px;padding:4px">
+              <button onclick="clearExplainLogo()" style="margin-left:8px;font-size:11px;color:#999;border:none;background:none;cursor:pointer">削除</button>
+            </div>
+          </div>
+          <button class="print-btn" style="margin-top:4px" onclick="printExplainPop()">説明POPを印刷 ↗</button>
+        </div>
+      </div>
     </div>
     <div class="card">
       <div class="section-head">
@@ -176,6 +228,13 @@ const SVG_ICONS = {
 .toggle-track.on{background:#1a1a1a}
 .toggle-thumb{width:16px;height:16px;border-radius:50%;background:white;position:absolute;top:2px;left:2px;transition:left .2s;box-shadow:0 1px 3px rgba(0,0,0,.3)}
 .toggle-track.on .toggle-thumb{left:18px}
+
+.exp-theme-btn{width:28px;height:28px;border-radius:50%;cursor:pointer;border:3px solid transparent;transition:all .15s;flex-shrink:0}
+.exp-theme-btn.on{outline:3px solid #333;outline-offset:2px}
+.exp-font-btn{flex:1;padding:7px 0;text-align:center;cursor:pointer;font-size:13px;background:white;color:#888;border:none;transition:all .15s;font-family:inherit;position:relative}
+.exp-font-btn:first-child{border-right:1px solid #ddd}
+.exp-font-btn.on{background:#1a1a1a;color:white;font-weight:500}
+.exp-font-btn.on::after{content:"✓";position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:11px}
 </style>
 <path class="st0" d="M188.9,85.4c-14.1-20.9-31.7-33.3-47.1-33.3s-33,12.4-47.1,33.3c-14.2,21-22.4,46.3-22.4,69.4s7,43.1,20.3,56.8
 	c12.3,12.7,29.8,19.7,49.2,19.7s36.8-7,49.2-19.7c13.3-13.7,20.3-33.3,20.3-56.8S203.1,106.5,188.9,85.4z M115.6,108.1
@@ -192,6 +251,13 @@ const SVG_ICONS = {
 .toggle-track.on{background:#1a1a1a}
 .toggle-thumb{width:16px;height:16px;border-radius:50%;background:white;position:absolute;top:2px;left:2px;transition:left .2s;box-shadow:0 1px 3px rgba(0,0,0,.3)}
 .toggle-track.on .toggle-thumb{left:18px}
+
+.exp-theme-btn{width:28px;height:28px;border-radius:50%;cursor:pointer;border:3px solid transparent;transition:all .15s;flex-shrink:0}
+.exp-theme-btn.on{outline:3px solid #333;outline-offset:2px}
+.exp-font-btn{flex:1;padding:7px 0;text-align:center;cursor:pointer;font-size:13px;background:white;color:#888;border:none;transition:all .15s;font-family:inherit;position:relative}
+.exp-font-btn:first-child{border-right:1px solid #ddd}
+.exp-font-btn.on{background:#1a1a1a;color:white;font-weight:500}
+.exp-font-btn.on::after{content:"✓";position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:11px}
 </style>
 <g>
 	<path class="st0" d="M175.1,90.9c-1.1,1.2-2.8,1.9-4.5,1.8c5.2,9.4,12.4,24.4,12.4,35.3v90.8c0,6.9-17,14.5-41.3,14.5
@@ -227,6 +293,13 @@ const SVG_ICONS = {
 .toggle-track.on{background:#1a1a1a}
 .toggle-thumb{width:16px;height:16px;border-radius:50%;background:white;position:absolute;top:2px;left:2px;transition:left .2s;box-shadow:0 1px 3px rgba(0,0,0,.3)}
 .toggle-track.on .toggle-thumb{left:18px}
+
+.exp-theme-btn{width:28px;height:28px;border-radius:50%;cursor:pointer;border:3px solid transparent;transition:all .15s;flex-shrink:0}
+.exp-theme-btn.on{outline:3px solid #333;outline-offset:2px}
+.exp-font-btn{flex:1;padding:7px 0;text-align:center;cursor:pointer;font-size:13px;background:white;color:#888;border:none;transition:all .15s;font-family:inherit;position:relative}
+.exp-font-btn:first-child{border-right:1px solid #ddd}
+.exp-font-btn.on{background:#1a1a1a;color:white;font-weight:500}
+.exp-font-btn.on::after{content:"✓";position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:11px}
 </style>
 <path class="st0" d="M177.5,163.1c0.1,8.3,13.1,21.2,17.5,21.1c4.3-0.1,17-12.6,16.8-21.6c-0.1-7.1-10.9-22-15.5-28
 	c0.4-2.7,0.7-5.9,0.6-9.2c-0.1-9.8-3.1-17.7-3.1-17.7s-2.7,8-2.6,17.8c0.1,3.4,0.4,6.6,0.9,9.3C187.8,141,177.4,156.6,177.5,163.1
@@ -250,6 +323,13 @@ const SVG_ICONS = {
   buckwheat: `<svg version="1.1" id="ic_buckwheat" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 283.5 283.5">
 <style type="text/css">
 	.st0{fill:currentColor;}
+
+.exp-theme-btn{width:28px;height:28px;border-radius:50%;cursor:pointer;border:3px solid transparent;transition:all .15s;flex-shrink:0}
+.exp-theme-btn.on{outline:3px solid #333;outline-offset:2px}
+.exp-font-btn{flex:1;padding:7px 0;text-align:center;cursor:pointer;font-size:13px;background:white;color:#888;border:none;transition:all .15s;font-family:inherit;position:relative}
+.exp-font-btn:first-child{border-right:1px solid #ddd}
+.exp-font-btn.on{background:#1a1a1a;color:white;font-weight:500}
+.exp-font-btn.on::after{content:"✓";position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:11px}
 </style>
 <g>
 	<path class="st0" d="M128.4,58.8c-5.1-12.1-7.4-12.9-8.7-13.3c-1.3-0.4-3.6-1.2-15,5.4c-6.6,3.8-14.4,9.1-21.5,14.4
@@ -281,6 +361,13 @@ const SVG_ICONS = {
 .toggle-track.on{background:#1a1a1a}
 .toggle-thumb{width:16px;height:16px;border-radius:50%;background:white;position:absolute;top:2px;left:2px;transition:left .2s;box-shadow:0 1px 3px rgba(0,0,0,.3)}
 .toggle-track.on .toggle-thumb{left:18px}
+
+.exp-theme-btn{width:28px;height:28px;border-radius:50%;cursor:pointer;border:3px solid transparent;transition:all .15s;flex-shrink:0}
+.exp-theme-btn.on{outline:3px solid #333;outline-offset:2px}
+.exp-font-btn{flex:1;padding:7px 0;text-align:center;cursor:pointer;font-size:13px;background:white;color:#888;border:none;transition:all .15s;font-family:inherit;position:relative}
+.exp-font-btn:first-child{border-right:1px solid #ddd}
+.exp-font-btn.on{background:#1a1a1a;color:white;font-weight:500}
+.exp-font-btn.on::after{content:"✓";position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:11px}
 </style>
 <g>
 	<path class="st0" d="M126.1,189.8l6.6,23c5.7-3.9,12.5-9.4,18.3-16.5c1.5-1.9,2.9-3.9,4.3-6l-22-8.9
@@ -314,6 +401,13 @@ const SVG_ICONS = {
 .toggle-track.on{background:#1a1a1a}
 .toggle-thumb{width:16px;height:16px;border-radius:50%;background:white;position:absolute;top:2px;left:2px;transition:left .2s;box-shadow:0 1px 3px rgba(0,0,0,.3)}
 .toggle-track.on .toggle-thumb{left:18px}
+
+.exp-theme-btn{width:28px;height:28px;border-radius:50%;cursor:pointer;border:3px solid transparent;transition:all .15s;flex-shrink:0}
+.exp-theme-btn.on{outline:3px solid #333;outline-offset:2px}
+.exp-font-btn{flex:1;padding:7px 0;text-align:center;cursor:pointer;font-size:13px;background:white;color:#888;border:none;transition:all .15s;font-family:inherit;position:relative}
+.exp-font-btn:first-child{border-right:1px solid #ddd}
+.exp-font-btn.on{background:#1a1a1a;color:white;font-weight:500}
+.exp-font-btn.on::after{content:"✓";position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:11px}
 </style>
 <path class="st0" d="M74,85.1c2.6-0.5,8.3,4.2,26.1,8.4c17.8,4.1,60.2,6.8,66.5,19.9c6.2,13.1-24,43.8-47.9,34.2
 	C94.7,138,71.3,85.6,74,85.1L74,85.1z"/>
@@ -342,6 +436,13 @@ const SVG_ICONS = {
 .toggle-track.on{background:#1a1a1a}
 .toggle-thumb{width:16px;height:16px;border-radius:50%;background:white;position:absolute;top:2px;left:2px;transition:left .2s;box-shadow:0 1px 3px rgba(0,0,0,.3)}
 .toggle-track.on .toggle-thumb{left:18px}
+
+.exp-theme-btn{width:28px;height:28px;border-radius:50%;cursor:pointer;border:3px solid transparent;transition:all .15s;flex-shrink:0}
+.exp-theme-btn.on{outline:3px solid #333;outline-offset:2px}
+.exp-font-btn{flex:1;padding:7px 0;text-align:center;cursor:pointer;font-size:13px;background:white;color:#888;border:none;transition:all .15s;font-family:inherit;position:relative}
+.exp-font-btn:first-child{border-right:1px solid #ddd}
+.exp-font-btn.on{background:#1a1a1a;color:white;font-weight:500}
+.exp-font-btn.on::after{content:"✓";position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:11px}
 </style>
 <path class="st0" d="M180.9,150.1c3.4-2.2,7.8-5.8,11.2-10.9c3.4-5.1,5.7-11.7,7.2-16.8c0.3-0.2,0.6-0.3,0.8-0.5
 	c14.1-9.9,8.7-31.4-4.4-45.1c-13.1-13.6-33.4-13.6-31.8-12.2c1.7,1.4,12.8,9.5,14.7,19c1.1,5.7-0.1,7.8-2.4,11.6
@@ -377,6 +478,13 @@ const SVG_ICONS = {
 .toggle-track.on{background:#1a1a1a}
 .toggle-thumb{width:16px;height:16px;border-radius:50%;background:white;position:absolute;top:2px;left:2px;transition:left .2s;box-shadow:0 1px 3px rgba(0,0,0,.3)}
 .toggle-track.on .toggle-thumb{left:18px}
+
+.exp-theme-btn{width:28px;height:28px;border-radius:50%;cursor:pointer;border:3px solid transparent;transition:all .15s;flex-shrink:0}
+.exp-theme-btn.on{outline:3px solid #333;outline-offset:2px}
+.exp-font-btn{flex:1;padding:7px 0;text-align:center;cursor:pointer;font-size:13px;background:white;color:#888;border:none;transition:all .15s;font-family:inherit;position:relative}
+.exp-font-btn:first-child{border-right:1px solid #ddd}
+.exp-font-btn.on{background:#1a1a1a;color:white;font-weight:500}
+.exp-font-btn.on::after{content:"✓";position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:11px}
 </style>
 <path class="st0" d="M223.7,143c-0.1-2.1-2.6-3.9-2.9-5.9c-0.3-2.1-0.1-4.1-0.5-6.1c-0.5-2-0.3-4.2-0.9-6.2c-0.6-2-2.2-3.6-3-5.5
 	s0.8-4.9-0.2-6.8c-0.9-1.9-1.9-3.8-3-5.6s-3.6-2.7-4.8-4.4s-2.2-3.5-3.6-5.1s-2.6-3.3-4-4.8s-4.2-1.5-5.8-2.9s-3-2.7-4.6-4
@@ -503,6 +611,178 @@ function clearLogo() {
   document.getElementById('logoPreviewWrap').style.display = 'none';
   updatePreview();
 }
+
+
+// ===== 説明POP =====
+let explainPopMode = false;
+let explainThemeColor = '#42210B';
+let explainFontFamily = 'Noto Sans JP';
+let explainLogoDataUrl = null;
+
+function toggleExplainPop() {
+  explainPopMode = !explainPopMode;
+  const track = document.getElementById('explainToggleTrack');
+  const label = document.getElementById('explainToggleLabel');
+  const settings = document.getElementById('explainPopSettings');
+  track.classList.toggle('on', explainPopMode);
+  label.textContent = explainPopMode ? 'オン' : 'オフ';
+  settings.style.display = explainPopMode ? '' : 'none';
+}
+
+function selectExplainTheme(el) {
+  document.querySelectorAll('.exp-theme-btn').forEach(b => b.classList.remove('on'));
+  el.classList.add('on');
+  explainThemeColor = el.dataset.color;
+}
+
+function selectExplainFont(el) {
+  document.querySelectorAll('.exp-font-btn').forEach(b => b.classList.remove('on'));
+  el.classList.add('on');
+  explainFontFamily = el.dataset.font;
+}
+
+function onExplainLogoUpload(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    explainLogoDataUrl = ev.target.result;
+    document.getElementById('explainLogoPreview').src = explainLogoDataUrl;
+    document.getElementById('explainLogoPreviewWrap').style.display = '';
+  };
+  reader.readAsDataURL(file);
+}
+
+function clearExplainLogo() {
+  explainLogoDataUrl = null;
+  document.getElementById('explainLogoInput').value = '';
+  document.getElementById('explainLogoPreviewWrap').style.display = 'none';
+}
+
+function printExplainPop() {
+  const col = explainThemeColor;
+  const ff  = explainFontFamily;
+  // A5縦: 148mm x 210mm → 559 x 794px (96dpi)
+  const W = 559, H = 794;
+
+  const ALLERGEN_DATA = [
+    {id:'egg',       ja:'卵',     en:'Eggs'},
+    {id:'milk',      ja:'乳',     en:'Milk'},
+    {id:'wheat',     ja:'小麦',   en:'Wheat'},
+    {id:'buckwheat', ja:'そば',   en:'Buckwheat'},
+    {id:'peanut',    ja:'落花生', en:'Peanuts'},
+    {id:'shrimp',    ja:'えび',   en:'Shrimp'},
+    {id:'crub',      ja:'かに',   en:'Crab'},
+    {id:'walnut',    ja:'くるみ', en:'Walnuts'},
+  ];
+
+  // ── レイアウト定義（px）──────────────────
+  //  [余白TOP] [ヘッダーバー] [余白] [メッセージ] [余白] [アイコン] [余白] [注意事項] [余白] [区切線] [ロゴ] [余白]
+  const padTop    = 18;   // 上余白（白）
+  const hdrH      = 86;   // ヘッダーバー
+  const gapAB     = 36;   // ヘッダー〜メッセージ間
+  const msgH      = 108;  // メッセージブロック高さ
+  const gapBC     = 38;   // メッセージ〜アイコン間
+  const iconAreaH = 148;  // アイコンブロック（背景帯）高さ
+  const gapCD     = 38;   // アイコン〜注意事項間
+  const noteH     = 172;  // 注意事項ブロック高さ
+  const gapDE     = 16;   // 注意事項〜区切線間
+  const lineH_px  = 1;    // 区切線
+  const gapEF     = 16;   // 区切線〜ロゴ間
+  const logoH     = 38;   // ロゴ高さ
+  const padBot    = 18;   // 下余白
+
+  const totalH = padTop+hdrH+gapAB+msgH+gapBC+iconAreaH+gapCD+noteH+gapDE+lineH_px+gapEF+logoH+padBot;
+  // totalHがHを超える場合は各gapを比例縮小
+  const scale = Math.min(1, H / totalH);
+
+  // Y座標を順番に積み上げ
+  let y = padTop * scale;
+  const yHdr   = y; y += hdrH * scale;
+  const yMsg   = y + gapAB * scale; y = yMsg + msgH * scale;
+  const yIcon  = y + gapBC * scale; y = yIcon + iconAreaH * scale;
+  const yNote  = y + gapCD * scale; y = yNote + noteH * scale;
+  const yLine  = y + gapDE * scale; y = yLine + lineH_px;
+  const yLogo  = y + gapEF * scale;
+
+  let svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">';
+  svg += '<rect width="' + W + '" height="' + H + '" fill="white"/>';
+
+  // ── A. ヘッダーバー ──────────────────────
+  const hdrScaled = hdrH * scale;
+  svg += '<rect x="0" y="' + yHdr + '" width="' + W + '" height="' + hdrScaled + '" fill="' + col + '"/>';
+  svg += '<text x="' + (W/2) + '" y="' + (yHdr + hdrScaled*0.50) + '" text-anchor="middle" font-size="28" font-weight="700" font-family="' + ff + '" fill="white">アレルゲン表示について</text>';
+  svg += '<text x="' + (W/2) + '" y="' + (yHdr + hdrScaled*0.80) + '" text-anchor="middle" font-size="13" font-family="' + ff + '" fill="rgba(255,255,255,0.80)">Regarding Allergen Labeling</text>';
+
+  // ── B. メッセージブロック ─────────────────
+  const msgScaled = msgH * scale;
+  const msgMid    = yMsg + msgScaled / 2;
+  svg += '<text x="' + (W/2) + '" y="' + (msgMid - 30) + '" text-anchor="middle" font-size="15.5" font-weight="700" font-family="' + ff + '" fill="#1a1a1a">アレルギーをお持ちのお客様に安心してお食事いただけるよう、</text>';
+  svg += '<text x="' + (W/2) + '" y="' + (msgMid - 8)  + '" text-anchor="middle" font-size="15.5" font-weight="700" font-family="' + ff + '" fill="#1a1a1a">全メニューに特定原材料8品目のアレルゲン表示を行っております。</text>';
+  svg += '<text x="' + (W/2) + '" y="' + (msgMid + 22) + '" text-anchor="middle" font-size="12" font-family="' + ff + '" fill="#555">To ensure that guests with food allergies can dine with confidence,</text>';
+  svg += '<text x="' + (W/2) + '" y="' + (msgMid + 40) + '" text-anchor="middle" font-size="12" font-family="' + ff + '" fill="#555">all menu items are labeled with the eight specified allergens.</text>';
+
+  // ── C. アイコンブロック ──────────────────
+  const iconAreaScaled = iconAreaH * scale;
+  svg += '<rect x="0" y="' + yIcon + '" width="' + W + '" height="' + iconAreaScaled + '" fill="' + col + '15"/>';
+
+  const PAD    = 24;
+  const iconSz = 52;
+  const iconGap = (W - PAD*2 - iconSz*8) / 7;
+  const iconY  = yIcon + (iconAreaScaled - iconSz - 30) / 2;
+  const jaFZ   = 13;
+  const enFZ   = 10.5;
+  const r      = Math.round(iconSz * 0.18);
+
+  ALLERGEN_DATA.forEach(function(a, i) {
+    const ix = PAD + i * (iconSz + iconGap);
+    svg += '<rect x="' + ix + '" y="' + iconY + '" width="' + iconSz + '" height="' + iconSz + '" fill="' + col + '" rx="' + r + '" ry="' + r + '"/>';
+    const pad2  = iconSz * 0.1;
+    const inner = (SVG_ICONS[a.id] || '')
+      .replace(/<svg[^>]*>/, '').replace(/<\/svg>/, '')
+      .replace(/fill:currentColor/g, 'fill:white')
+      .replace(/fill="currentColor"/g, 'fill="white"');
+    svg += '<svg x="' + (ix+pad2) + '" y="' + (iconY+pad2) + '" width="' + (iconSz-pad2*2) + '" height="' + (iconSz-pad2*2) + '" viewBox="0 0 283.5 283.5">' + inner + '</svg>';
+    svg += '<text x="' + (ix+iconSz/2) + '" y="' + (iconY+iconSz+jaFZ+4) + '" text-anchor="middle" font-size="' + jaFZ + '" font-weight="700" font-family="' + ff + '" fill="' + col + '">' + a.ja + '</text>';
+    svg += '<text x="' + (ix+iconSz/2) + '" y="' + (iconY+iconSz+jaFZ+enFZ+9) + '" text-anchor="middle" font-size="' + enFZ + '" font-weight="700" font-family="' + ff + '" fill="' + col + '">' + a.en + '</text>';
+  });
+
+  // ── D. 注意事項ブロック ──────────────────
+  const noteJaFZ  = 12.5;
+  const noteEnFZ  = 10;
+  const noteGap   = 40;   // 各注意事項の行間
+
+  svg += '<text x="' + PAD + '" y="' + (yNote + 22) + '" font-size="14" font-weight="700" font-family="' + ff + '" fill="' + col + '">【注意事項 / Important Note】</text>';
+
+  const notes = [
+    {ja:'同じ調理器具を使用しているため、微量のアレルゲンが混入する可能性があります。', en:'Trace allergens may be present due to shared cooking utensils.'},
+    {ja:'メニューの内容は仕入れ状況により変更となる場合がございます。',               en:'Menu items are subject to change depending on ingredient availability.'},
+    {ja:'アレルギーに関するご不明点は、スタッフまでお気軽にお申し付けください。',       en:'Please feel free to ask our staff if you have any allergy-related concerns.'},
+  ];
+  notes.forEach(function(n, i) {
+    const ny = yNote + 48 + i * noteGap;
+    svg += '<text x="' + (PAD+4) + '" y="' + ny + '" font-size="' + noteJaFZ + '" font-family="' + ff + '" fill="#222">・' + n.ja + '</text>';
+    svg += '<text x="' + (PAD+16) + '" y="' + (ny + noteJaFZ + 5) + '" font-size="' + noteEnFZ + '" font-family="' + ff + '" fill="#777">' + n.en + '</text>';
+  });
+
+  // ── E. 区切り線 ─────────────────────────
+  svg += '<line x1="' + PAD + '" y1="' + yLine + '" x2="' + (W-PAD) + '" y2="' + yLine + '" stroke="' + col + '" stroke-width="0.8" opacity="0.3"/>';
+
+  // ── F. ロゴ ──────────────────────────────
+  if (explainLogoDataUrl) {
+    const lH = logoH * scale;
+    const lW = Math.min(lH * 4, W - PAD*4);
+    svg += '<image href="' + explainLogoDataUrl + '" x="' + ((W-lW)/2) + '" y="' + yLogo + '" width="' + lW + '" height="' + lH + '" preserveAspectRatio="xMidYMid meet"/>';
+  }
+
+  svg += '</svg>';
+
+  const win = window.open('', '_blank');
+  win.document.write('<!DOCTYPE html><html><head><meta charset="UTF-8"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet"><style>@page{size:A5 portrait;margin:0}*{margin:0;padding:0;box-sizing:border-box}body{width:148mm;height:210mm;overflow:hidden}svg{width:148mm;height:210mm;display:block}@media print{body{width:148mm;height:210mm}}</style></head><body>' + svg + '</body></html>');
+  win.document.close();
+  setTimeout(() => win.print(), 800);
+}
+// ===== 説明POP END =====
 
 function init() {
   // トグル初期状態（オン）
